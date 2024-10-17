@@ -46,12 +46,14 @@ Frequent events will influence your career both on and off the court.
 - *Player and Team Changes*: Roster changes, injuries, and trades can affect your role. You might also be involved in decisions, such as suggesting trades or influencing your coach to adjust the roster.  
 - *Off-Court Events*: Handle press conferences, interact with fans, and navigate potential personal scandals that affect your reputation and career trajectory.
 
-### Main Menu
+# Menus
+
+## Main Menu
 
 1. **Load Career:** Load an existing career and view a summary of recent developments in your player’s journey.
 2. **New Career:** Start fresh with a new player and experience the draft process and challenges all over again.
   
-### Career Menu
+## Career Menu
 
 1. **Home:**  
    - View your team, recent games, career averages, team standings, and upcoming matches.  
