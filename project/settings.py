@@ -43,16 +43,30 @@ MY_APPS = {
         "django.contrib.messages",
         "django.contrib.staticfiles",
     ],
-    "third_party": [
+    "allauth": [
         "allauth",
         "allauth.account",
         "allauth.socialaccount",
         "allauth.socialaccount.providers.google",
         "allauth.socialaccount.providers.discord",
     ],
+    "themes": [
+        "tailwind",
+        "theme",
+        "django_browser_reload",
+    ],
+    "project": [
+        "core",
+    ]
 }
 
 INSTALLED_APPS = [app for apps in MY_APPS.values() for app in apps]
+TAILWIND_APP_NAME = "theme"
+# NPM_BIN_PATH = "/usr/local/bin/npm"
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -62,7 +76,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "allauth.account.middleware.AccountMiddleware", # allauth
+    "allauth.account.middleware.AccountMiddleware", # django-allauth
+    "django_browser_reload.middleware.BrowserReloadMiddleware", # django-browser-reload
 ]
 
 ROOT_URLCONF = "project.urls"
@@ -70,7 +85,7 @@ ROOT_URLCONF = "project.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -150,4 +165,19 @@ AUTHENTICATION_BACKENDS = [
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = True
-SOCIALACCOUNT_PROVIDERS = {}
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        "APP": {
+            "client_id": "YOUR_GOOGLE_CLIENT_ID",
+            "secret": "YOUR_GOOGLE_SECRET",
+            "key": "",
+        },
+    },
+    "discord": {
+        "APP": {
+            "client_id": "YOUR_DISCORD_CLIENT_ID",
+            "secret": "YOUR_DISCORD_SECRET",
+            "key": "",
+        },
+    },
+}

@@ -1,0 +1,4 @@
+Django==5.1.2
+django-allauth==65.0.2
+django-tailwind==3.8.0
+django_browser_reload==1.16.0
