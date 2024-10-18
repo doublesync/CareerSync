@@ -1,4 +1,4 @@
-# YourCareer
+# CareerSync
 
 ## **Creation**  
 When starting your career, you’ll create your player with the following options: first name, last name, jersey number, college, hometown, height, weight, wingspan, caliber, specialty, and personality traits.  
